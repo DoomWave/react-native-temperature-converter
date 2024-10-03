@@ -10,23 +10,26 @@ import { UNITS, convertTemperatureTo, getOppositeUnit} from "./utils/temperature
 export default function App() {
   const [inputValue, setInputValue] = useState(0);
   const [currentUnit, setCurrentUnit] = useState("°C");
-
+  const oppositeUnite = getOppositeUnit(currentUnit)
   return (
-  <ImageBackground style={s.backgroundImage} source={hotBackground}>
-  <SafeAreaProvider>
-    <SafeAreaView style={s.root}>
-      <View style={s.workspace}>
-        <DisplayTemperature unit={currentUnit} temperature={convertTemperatureTo(inputValue, getOppositeUnit(currentUnit))}/>
-        <Input 
-          unit={currentUnit} 
-          onChange={setInputValue} 
-          defaultValue={0}
-        />
-        <Text>Button</Text>
-      </View>
-    </SafeAreaView>
-  </SafeAreaProvider>
-  </ImageBackground>
+    <ImageBackground style={s.backgroundImage} source={hotBackground}>
+      <SafeAreaProvider>
+        <SafeAreaView style={s.root}>
+          <View style={s.workspace}>
+            <DisplayTemperature 
+            unit={oppositeUnite} 
+            temperature={convertTemperatureTo(inputValue, oppositeUnite)}
+            />
+            <Input 
+              unit={currentUnit} 
+              onChange={setInputValue} 
+              defaultValue={0}
+            />
+            <Text>Button</Text>
+          </View>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </ImageBackground>
   )
 }
 
