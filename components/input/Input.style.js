@@ -5,6 +5,7 @@ export const style = StyleSheet.create({
     backgroundColor: "white",
     height: 50,
     borderRadius: 20,
-    alignSelf: "stretch"
+    alignSelf: "stretch",
+    paddingLeft: 25,
     },
 });
