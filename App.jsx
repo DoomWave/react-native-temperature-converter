@@ -10,6 +10,7 @@ import {
   convertTemperatureTo, 
   getOppositeUnit
 } from "./utils/temperature";
+import { ButtonConverter } from "./components/ButtonConverter/ButtonConvert";
 export default function App() {
   const [inputValue, setInputValue] = useState(0);
   const [currentUnit, setCurrentUnit] = useState("°C");
@@ -36,7 +37,7 @@ export default function App() {
               onChange={setInputValue} 
               defaultValue={0}
             />
-            <Text>Button</Text>
+            <ButtonConverter unit={currentUnit} />
           </View>
         </SafeAreaView>
       </SafeAreaProvider>
