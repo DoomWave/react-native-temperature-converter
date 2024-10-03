@@ -1,10 +1,15 @@
 import {View, TextInput, Text } from "react-native";
-import { style } from "./input.style";
-export function Input() {
+import { s } from "./Input.style";
+export function Input({defaultValue}) {
     return (
     <View style={s.root}>
-    <TextInput style={style.input} placeholder="Type your temperature"/>
+    <TextInput 
+    style={s.Input} 
+    maxLength={3} 
+    placeholder="Type your temperature"
+    defaultValue={defaultValue}
+    />
     <Text style={s.unit}>°C</Text>
     </View>
-    )
+    );
 }

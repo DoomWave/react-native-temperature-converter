@@ -1,16 +1,20 @@
 import { StyleSheet } from "react-native";
 
-export const style = StyleSheet.create({
+export const s = StyleSheet.create({
   root: {
     alignSelf: "stretch",
+    justifyContent: "center",
   },
-  input: {
+  Input: {
     backgroundColor: "white",
     height: 50,
-    borderRadius: 20,
-    paddingLeft: 25,
+    borderRadius: 30,
+    paddingLeft: 30,
     },
   unit: {
-    position: "absolute"
+    position: "absolute",
+    alignSelf: "flex-end",
+    paddingRight: 30,
+    fontSize: 30,
   }
 });
