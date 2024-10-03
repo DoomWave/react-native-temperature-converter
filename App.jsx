@@ -5,7 +5,7 @@ import hotBackground from "./assets/hot.png"
 import { Input} from "./components/Input/Input"
 import {useState } from "react"
 import { DisplayTemperature } from "./components/DisplayTemperature/DisplayTemperature";
-import { UNITS, convertTemperatureTo} from "./utils/temperature"
+import { UNITS, convertTemperatureTo, getOppositeUnit} from "./utils/temperature"
 
 export default function App() {
   const [inputValue, setInputValue] = useState(0);
@@ -16,7 +16,7 @@ export default function App() {
   <SafeAreaProvider>
     <SafeAreaView style={s.root}>
       <View style={s.workspace}>
-        <DisplayTemperature unit={currentUnit} temperature={inputValue}/>
+        <DisplayTemperature unit={currentUnit} temperature={convertTemperatureTo(inputValue, getOppositeUnit(currentUnit))}/>
         <Input 
           unit={currentUnit} 
           onChange={setInputValue} 
