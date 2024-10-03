@@ -16,4 +16,4 @@ function convertTemperatureTo(temperature, unitTo){
 function getOppositeUnit(unit){
     return unit=== UNITS.celsius ? UNITS.fahrenheit : UNITS.celsius;
 }
-export { UNITS, convertTemperatureTo }
+export { UNITS, convertTemperatureTo, getOppositeUnit }

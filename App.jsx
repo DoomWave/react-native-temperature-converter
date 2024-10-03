@@ -5,6 +5,7 @@ import hotBackground from "./assets/hot.png"
 import { Input} from "./components/Input/Input"
 import {useState } from "react"
 import { DisplayTemperature } from "./components/DisplayTemperature/DisplayTemperature";
+import { UNITS, convertTemperatureTo} from "./utils/temperature"
 
 export default function App() {
   const [inputValue, setInputValue] = useState(0);
