@@ -1,11 +1,11 @@
 const UNITS = {
     celsius : "°C",
-    fahrenheit: "°F"
+    fahrenheit: "°F",
 }
 
 function convertTemperatureTo(temperature, unitTo){
     if(unitTo === UNITS.celsius){
-        return(temperature - 32)/ 1.
+        return(temperature - 32)/ 1.8;
     }else if (unitTo === UNITS.fahrenheit){
         return temperature * 1.8 + 32;
     }else{
@@ -16,4 +16,4 @@ function convertTemperatureTo(temperature, unitTo){
 function getOppositeUnit(unit){
     return unit=== UNITS.celsius ? UNITS.fahrenheit : UNITS.celsius;
 }
-export { UNITS, convertTemperatureTo, getOppositeUnit }
+export { UNITS, convertTemperatureTo, getOppositeUnit };

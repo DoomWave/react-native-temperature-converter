@@ -1,16 +1,27 @@
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { s } from "./App.style";
-import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context"
 import { Text, View, ImageBackground } from "react-native";
-import hotBackground from "./assets/hot.png"
-import { Input} from "./components/Input/Input"
-import {useState } from "react"
+import hotBackground from "./assets/hot.png";
+import { Input } from "./components/Input/Input";
+import { useState } from "react";
 import { DisplayTemperature } from "./components/DisplayTemperature/DisplayTemperature";
-import { UNITS, convertTemperatureTo, getOppositeUnit} from "./utils/temperature"
-
+import { 
+  UNITS, 
+  convertTemperatureTo, 
+  getOppositeUnit
+} from "./utils/temperature";
 export default function App() {
   const [inputValue, setInputValue] = useState(0);
   const [currentUnit, setCurrentUnit] = useState("°C");
   const oppositeUnite = getOppositeUnit(currentUnit)
+
+  function getConvertedTemperature() {
+    if (isNaN(inputValue)) {
+      return "";
+    } else {
+      return convertTemperatureTo(inputValue, oppositeUnite).toFixed(1);
+    }
+  }
   return (
     <ImageBackground style={s.backgroundImage} source={hotBackground}>
       <SafeAreaProvider>
@@ -18,7 +29,7 @@ export default function App() {
           <View style={s.workspace}>
             <DisplayTemperature 
             unit={oppositeUnite} 
-            temperature={convertTemperatureTo(inputValue, oppositeUnite)}
+            temperature={getConvertedTemperature()}
             />
             <Input 
               unit={currentUnit} 
