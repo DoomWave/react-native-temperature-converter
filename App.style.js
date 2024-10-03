@@ -9,4 +9,7 @@ export const s = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-evenly",
     },
+    backgroundImage: {
+        height: "100%"
+    }
 })
