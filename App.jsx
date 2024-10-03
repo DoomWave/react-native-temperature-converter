@@ -37,7 +37,10 @@ export default function App() {
               onChange={setInputValue} 
               defaultValue={0}
             />
-            <ButtonConverter unit={currentUnit} />
+            <ButtonConverter 
+              onPress={() =>{
+              setCurrentUnit(oppositeUnite)
+            }} unit={currentUnit} />
           </View>
         </SafeAreaView>
       </SafeAreaProvider>
